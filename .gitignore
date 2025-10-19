@@ -1,0 +1,10 @@
+#do not include python libraries
+/Lib
+/Include
+
+#do not include venv scripts
+/Scripts
+
+#do not incluide env files
+pyvenv.cfg
+src/.env
