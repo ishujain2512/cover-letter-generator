@@ -16,5 +16,5 @@ def company_data(url):
     return company_data_extracted
 
 def job_description(url):
-    job_description_extracted=extract_text_from_url(job_description(url))
+    job_description_extracted=extract_text_from_url((url))
     return job_description_extracted

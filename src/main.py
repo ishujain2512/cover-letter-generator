@@ -1,6 +1,6 @@
 import argparse
 from aigen import generate_cover_letter
-from scrapper import company_data, job_description
+import scrapper
 from file_export_helpers import *
 
 def main():
@@ -12,13 +12,13 @@ def main():
     parser.add_argument("-n", "--name", required=True, help="Your name")
     parser.add_argument("-s", "--skills", nargs="+", required=True, help="List of your skills")
     parser.add_argument(
-        "-o", "--output", choices=["txt", "docx", "pdf"], default="docx",
+        "-o", "--output", choices=["txt", "docx"], default="docx",
         help="Choose output format for the cover letter (default: docx)"
     )
 
     args = parser.parse_args()
-    company_data=company_data(args.url)
-    job_description=job_description(args.job)
+    company_data=scrapper.company_data(args.url)
+    job_description=scrapper.job_description(args.job)
 
     # Generate the letter
     letter = generate_cover_letter(company_data, args.name, args.skills, job_description)
@@ -28,8 +28,6 @@ def main():
         save_as_txt(letter)
     elif args.output == "docx":
         save_as_docx(letter)
-    elif args.output == "pdf":
-        save_as_pdf(letter)
 
 
 if __name__ == "__main__":

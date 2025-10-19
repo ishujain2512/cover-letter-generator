@@ -12,7 +12,7 @@ def generate_cover_letter(company_data, name, skills,job_description):
     {job_description}
 
     Write a personalized cover letter for {name}, highlighting these skills: {', '.join(skills)}.
-    Make it professional, engaging, and tailored to the company.
+    Make it professional, engaging, and tailored to the company. Format it expertly with proper styling, do not use markdown.
     """
 
     # Use Gemini model
@@ -26,4 +26,4 @@ def generate_cover_letter(company_data, name, skills,job_description):
     )
 
     # Return generated text
-    return response.choices[0].message["content"]
+    return response.choices[0].message.content
