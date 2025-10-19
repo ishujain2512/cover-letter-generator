@@ -85,7 +85,7 @@ python main.py \
 ```
 
 * `-u` / `--url`: URL of the company’s page to scrape data from.
-* `-j` / `--job`: Job description text or URL.
+* `-j` / `--job`: Job description text URL.
 * `-n` / `--name`: Your full name.
 * `-s` / `--skills`: List of your skills separated by space.
 * `-o` / `--output`: Output format (`txt` or `docx`). Default is `docx`.
