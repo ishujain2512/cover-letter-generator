@@ -8,7 +8,7 @@ def main():
         description="Generate a personalized cover letter using AI"
     )
     parser.add_argument("-u", "--url", required=True, help="Company URL to scrape data from")
-    parser.add_argument("-j", "--job", required=True, help="Job description or URL")
+    parser.add_argument("-j", "--job", required=True, help="Job description URL")
     parser.add_argument("-n", "--name", required=True, help="Your name")
     parser.add_argument("-s", "--skills", nargs="+", required=True, help="List of your skills")
     parser.add_argument(
